@@ -1,0 +1,32 @@
+syntax = "proto3";
+package gendocu.sdk_generator.v3;
+import "google/protobuf/empty.proto";
+
+//BookService is a simple service that enables listing, creating or removing the book.
+service BookService {
+  rpc ListBooks(google.protobuf.Empty) returns (ListBookResponse);
+  rpc DeleteBook(DeleteBookRequest) returns (Book);
+  rpc CreateBook(Book) returns (google.protobuf.Empty);
+}
+
+message DeleteBookRequest {
+  oneof selector {
+    string isbn = 1;
+    string title = 2;
+  }
+}
+
+message ListBookResponse {
+  repeated Book books = 1;
+}
+
+message Book {
+  string isbn = 1;
+  string title = 2;
+  Author author = 3;
+}
+
+message Author {
+  string first_name = 1;
+  string last_name = 2;
+}
