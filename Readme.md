@@ -1,6 +1,6 @@
 # Library app
 
-This app is a part of the [tutorial](https://blog.gendocu.com/posts/grpc-web-on-aws/). It consists of multiple parts:
+[The documentation](https://doc.gendocu.com/gendocu/api/LibraryApp). This app is a part of the [tutorial](https://blog.gendocu.com/posts/grpc-web-on-aws/). It consists of multiple parts:
 - `proto` - you can find proto definition here
 - `backend` - the implementation of backend in golang. It has two executables - `cmd/localserver/main.go` and `cmd/awslambda/main.go`.
 - `frontend` - the simple react app, that only calls the backend
