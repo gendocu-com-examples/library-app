@@ -41,8 +41,8 @@ func (s *DummyService) DeleteBook(ctx context.Context, request *sdk.DeleteBookRe
 	return nil, fmt.Errorf("book not found %+v", request)
 }
 
-func (s *DummyService) CreateBook(ctx context.Context, book *sdk.Book) (*empty.Empty, error) {
+func (s *DummyService) CreateBook(ctx context.Context, book *sdk.Book) (*sdk.Book, error) {
 	s.books = append(s.books, book)
-	return &empty.Empty{}, nil
+	return book, nil
 }
 

@@ -40,8 +40,8 @@ func (s *DynamoDBService) DeleteBook(ctx context.Context, request *sdk.DeleteBoo
 	return res, err
 }
 
-func (s *DynamoDBService) CreateBook(ctx context.Context, book *sdk.Book) (*empty.Empty, error) {
+func (s *DynamoDBService) CreateBook(ctx context.Context, book *sdk.Book) (*sdk.Book, error) {
 	err := s.t.Put(book).RunWithContext(ctx)
-	return &empty.Empty{}, err
+	return book, err
 }
 

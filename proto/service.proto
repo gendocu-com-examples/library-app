@@ -9,7 +9,7 @@ service BookService {
   // DeleteBook deletes the book from the library. Warning! This action cannot be revert and doesn't require any confirmation.
   rpc DeleteBook(DeleteBookRequest) returns (Book);
   // CreateBook creates a book in the library. We do not de-duplicate the requests as this is the tutorial API.
-  rpc CreateBook(Book) returns (google.protobuf.Empty);
+  rpc CreateBook(Book) returns (Book);
 }
 
 // You can delete the books using multiple selectors
