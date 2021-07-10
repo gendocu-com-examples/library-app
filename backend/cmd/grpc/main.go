@@ -1,12 +1,14 @@
 package main
 
 import (
-	sdk "git.gendocu.com/gendocu/LibraryApp.git/sdk/go"
-	"github.com/gendocu-com-examples/library-app/backend/pkg"
-	"google.golang.org/grpc"
 	"log"
 	"net"
 	"os"
+
+	sdk "git.gendocu.com/gendocu/LibraryApp.git/sdk/go"
+	"github.com/gendocu-com-examples/library-app/backend/pkg"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func main() {
@@ -21,6 +23,7 @@ func main() {
 		log.Fatalf("Got error: %+v", err)
 	}
 	grpcServer := grpc.NewServer()
+	reflection.Register(grpcServer)
 	srvc := pkg.NewDummyService()
 	sdk.RegisterBookServiceServer(grpcServer, srvc)
 	if err := grpcServer.Serve(lis); err != nil {
