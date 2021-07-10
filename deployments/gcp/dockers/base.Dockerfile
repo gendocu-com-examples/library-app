@@ -1,8 +1,10 @@
 FROM golang:1.16-buster as builder
 ENV GO111MODULE on
+# Install also upx to compress the output binary - speeds up cold startup of Docker image
 RUN apt-get update && apt-get install -y make git upx ca-certificates
 
 WORKDIR /app
+# Copy the dependencies first to enhance the docker cache - it speeds up next builds
 COPY ./backend/go.mod .
 COPY ./backend/go.sum .
 RUN  go mod download

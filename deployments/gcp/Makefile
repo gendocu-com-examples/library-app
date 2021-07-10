@@ -8,6 +8,6 @@ build:
 
 deploy:
 	docker push ${GCR}/${GRPC_IMG}
-	gcloud run deploy --project gendocu-example --image ${GCR}/${GRPC_IMG} --platform managed --region us-central1 --max-instances 1 --memory 128Mi  ${GRPC_IMG}
+	gcloud run deploy --project gendocu-example --image ${GCR}/${GRPC_IMG} --platform managed --region us-central1 --max-instances 1 --memory 128Mi ${GRPC_IMG}
 	docker push ${GCR}/${GRPCWEB_IMG}
 	gcloud run deploy --project gendocu-example  --image ${GCR}/${GRPCWEB_IMG} --platform managed --region us-central1 --max-instances 1 --memory 128Mi  ${GRPCWEB_IMG}
