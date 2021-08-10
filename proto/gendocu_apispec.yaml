@@ -1,4 +1,5 @@
 spectype: gendocu
+defaultEnvironment: "x"
 servers:
   - selector: "*"
     envs:
