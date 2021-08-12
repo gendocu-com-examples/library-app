@@ -12,5 +12,4 @@ servers:
 documentation:
   content:
     introduction:
-      escapeMarkdown: false
       file: docs/introduction.md
