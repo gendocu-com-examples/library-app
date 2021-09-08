@@ -5,7 +5,7 @@ servers:
     - name: "prod" # gcp
       urls:
       - grpcwebs://library-app-grpcweb-uqnits2f5q-uc.a.run.app
-      - grpcs://library-app-grpc-uqnits2f5q-uc.a.run.app
+      - grpcs://library-app-grpc-uqnits2f5q-uc.a.run.app:443
     - name: "aws"
       urls:
       - grpcwebs://t30z1m0w81.execute-api.us-east-1.amazonaws.com
