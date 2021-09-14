@@ -1,8 +1,8 @@
 spectype: gendocu
 servers:
-  - selector: "*"
+  - selector: "*" # the * must be wrapped with ""
     envs:
-    - name: "prod" # gcp
+    - name: "gcp" # the first environment is the default one
       urls:
       - grpcwebs://library-app-grpcweb-uqnits2f5q-uc.a.run.app
       - grpcs://library-app-grpc-uqnits2f5q-uc.a.run.app:443
