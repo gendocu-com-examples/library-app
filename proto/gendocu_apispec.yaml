@@ -13,3 +13,23 @@ documentation:
   content:
     introduction:
       file: docs/introduction.md
+
+securitySchemes:
+  - name: public
+    title: Public API
+    description: # you can also use the 'file:' instead of text to load a markdown from external file
+      text: The default, public authentication. All the endpoints support anonymous users.
+  - name: token-private
+    title: Token Auth
+    description:
+      text: The standard token authentication. This authentication method is only for demo purpose - backend ignores the token in current implementation.
+    callAuthentication:
+      Token:
+        grpc:
+          meta: "x-authorization"
+          valuePrefix: "bearer " # including whitespaces, the prefix for each value
+          exampleValue: "aaa.bbbbbbb.ccc" # without the prefix
+        grpcweb:
+          header: "Authorization"
+          valuePrefix: "Bearer " # including whitespaces, the prefix for each value
+          exampleValue: "aaa.bbbbbbb.ccc"
