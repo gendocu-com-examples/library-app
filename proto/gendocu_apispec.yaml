@@ -20,11 +20,11 @@ securitySchemes:
   - name: public
     title: Public API
     description: # you can also use the 'file:' instead of text to load a markdown from external file
-      text: The default, public authentication. All the endpoints support anonymous users.
+      text: The default authentication method - does not require any authentication. All the endpoints support anonymous users.
   - name: token-private
     title: Token Auth
     description:
-      text: The standard token authentication. This authentication method is only for demo purpose - backend ignores the token in current implementation.
+      text: The standard token authentication. This authentication method is only for demo purposes - the backend ignores the token in the current implementation.
     callAuthentication:
       token: # e.g. HTTP Header "Authorization: Bearer aaa.bbbbbbb.ccc"
         exampleValue: "aaa.bbbbbbb.ccc" # this value should be shared across all the schemes. It should have exactly the same scheme for each protocol - if it differs, then it should be separate authentication method

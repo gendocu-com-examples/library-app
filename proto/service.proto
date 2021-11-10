@@ -1,5 +1,5 @@
 syntax = "proto3";
-package gendocu.sdk_generator.v3;
+package gendocu.example.library_app;
 import "google/protobuf/empty.proto";
 
 // BookService is a simple service that enables listing, creating, or removing the book.

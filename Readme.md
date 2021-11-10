@@ -12,3 +12,10 @@ You can run environment locally using command `make run-local`.
 
 To deploy it to lambda you need to call `make deploy` and then replace the lambda url in the Makefile.
 Then you can run react app with newly deployed backend using `run-frontend-with-aws-be`.
+
+
+# TODO java
+Gradle@6 
+
+1. Create `build.gradle` file
+1. `gradle build`
