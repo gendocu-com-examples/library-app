@@ -17,6 +17,15 @@ deploy-function:
 deploy-gcp:
 	cd deployments/gcp && make build deploy
 
+deploy-docs:
+	make deploy-gcp-documentation deploy-buf-documentation
+deploy-gcp-documentation:
+	cd proto && gcloud endpoints services deploy api_descriptor.pb api_config.yaml --project gendocu-example
+deploy-buf-documentation:
+	cd proto && buf push
+create-local-docs:
+	cd proto && protoc --doc_out=./doc --doc_opt=html,index.html proto/*.proto
+
 run-frontend-with-aws-be:
 	@ echo "running with backend ${GRPCWEB_URL}" && sleep 3s
 	cd frontend && REACT_APP_BACKEND=${GRPCWEB_URL} yarn start

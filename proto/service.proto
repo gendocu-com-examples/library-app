@@ -2,17 +2,17 @@ syntax = "proto3";
 package gendocu.example.library_app;
 import "google/protobuf/empty.proto";
 
-// BookService is a simple service that enables listing, creating, or removing the book.
+// BookService is a simple service that enables listing, creating, or removing a book.
 service BookService {
-  // ListBooks returns the list of all books available in the library without any pagination.
+  // ListBooks returns the list of books available in the library without any pagination.
   rpc ListBooks(google.protobuf.Empty) returns (ListBookResponse);
-  // DeleteBook deletes the book from the library. Warning! This action cannot be revert and doesn't require any confirmation.
+  // DeleteBook deletes the book from the library. Warning! This action cannot be reverted and doesn't require any confirmation.
   rpc DeleteBook(DeleteBookRequest) returns (Book);
   // CreateBook creates a book in the library. We do not de-duplicate the requests as this is the tutorial API.
   rpc CreateBook(Book) returns (Book);
 }
 
-// You can delete the books using multiple selectors
+// You can delete a book using multiple selectors
 // [Example]{"selector": {"isbn": "978-3-16-148410-0"}}
 // [Example]{"selector": {"title": "The Shining"}}
 message DeleteBookRequest {
@@ -22,7 +22,7 @@ message DeleteBookRequest {
   }
 }
 
-// Returns all books available in the library. Keep in mind, that a response might be large.
+// RPC returns a list of books available in the library. Keep in mind that a response might be large.
 // [Example] {"books": [
 //  {"isbn": "978-0-74-753274-3", "title": "Harry Potter and the Philosopher's Stone", "author": {"first_name": "J.K.", "last_name": "Rowling"}},
 //  {"isbn": "978-0-54-501022-1", "title": "Harry Potter and the Deathly Hallows", "author": {"first_name": "J.K.", "last_name": "Rowling"}}
@@ -31,7 +31,7 @@ message ListBookResponse {
   repeated Book books = 1;
 }
 
-// The simplified structure that represents a single book.
+// The simplified structure represents a single book.
 // [Example]{"isbn": "978-3-16-148410-0", "title": "The Shining", "author": {"first_name": "Stephen", "last_name": "King"}}
 message Book {
   string isbn = 1; // unique identifier
