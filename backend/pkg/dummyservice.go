@@ -9,6 +9,7 @@ import (
 
 type DummyService struct {
 	books []*sdk.Book
+	sdk.UnimplementedBookServiceServer
 }
 
 func NewDummyService() *DummyService {

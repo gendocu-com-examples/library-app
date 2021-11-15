@@ -12,7 +12,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "LibraryApp": "https://git.gendocu.com/gendocu/LibraryApp.git#fd131dbbf77e73de26aed805930d6c2615ece495",
+    "LibraryApp": "https://git.gendocu.com/gendocu/LibraryApp.git#master",
     "google-protobuf": "^3.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

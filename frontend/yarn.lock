@@ -2155,9 +2155,9 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"LibraryApp@https://git.gendocu.com/gendocu/LibraryApp.git#fd131dbbf77e73de26aed805930d6c2615ece495":
+"LibraryApp@https://git.gendocu.com/gendocu/LibraryApp.git#master":
   version "0.0.0"
-  resolved "https://git.gendocu.com/gendocu/LibraryApp.git#fd131dbbf77e73de26aed805930d6c2615ece495"
+  resolved "https://git.gendocu.com/gendocu/LibraryApp.git#e269acb068612a979d9f2ef1c37ff143b2b6a57d"
 
 abab@^2.0.3:
   version "2.0.5"
