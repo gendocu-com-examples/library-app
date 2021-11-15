@@ -1,0 +1,7 @@
+type: google.api.Service
+config_version: 3
+name: bookstore.endpoints.gendocu-example.cloud.goog
+
+title: "Library App gRPC API"
+apis:
+  - name: gendocu.example.library_app.BookService
