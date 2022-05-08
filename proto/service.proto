@@ -1,15 +1,30 @@
 syntax = "proto3";
 package gendocu.example.library_app;
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
 
 // BookService is a simple service that enables listing, creating, or removing a book.
+// This service exposes gRPC, gRPC-Web and REST API (all generated from a protobuf file).
 service BookService {
   // ListBooks returns the list of books available in the library without any pagination.
-  rpc ListBooks(google.protobuf.Empty) returns (ListBookResponse);
+  rpc ListBooks(google.protobuf.Empty) returns (ListBookResponse) {
+    option (google.api.http) = {
+      get: "/books",
+    };
+  }
   // DeleteBook deletes the book from the library. Warning! This action cannot be reverted and doesn't require any confirmation.
-  rpc DeleteBook(DeleteBookRequest) returns (Book);
+  rpc DeleteBook(DeleteBookRequest) returns (Book) {
+    option (google.api.http) = {
+      delete: "/book/{isbn}",
+    };
+  }
   // CreateBook creates a book in the library. We do not de-duplicate the requests as this is the tutorial API.
-  rpc CreateBook(Book) returns (Book);
+  rpc CreateBook(Book) returns (Book) {
+    option (google.api.http) = {
+      post: "/book",
+      body: "*",
+    };
+  }
 }
 
 // You can delete a book using multiple selectors
