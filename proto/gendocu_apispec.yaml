@@ -6,6 +6,7 @@ servers:
       urls:
       - grpcwebs://library-app-grpcweb-uqnits2f5q-uc.a.run.app
       - grpcs://library-app-grpc-uqnits2f5q-uc.a.run.app:443
+      - rests://library-app-grpc-uqnits2f5q-uc.a.run.app
     - name: "aws" # aws lambda doesn't support the grpc out of the box
       urls:
       - grpcwebs://t30z1m0w81.execute-api.us-east-1.amazonaws.com
