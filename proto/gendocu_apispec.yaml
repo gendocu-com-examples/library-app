@@ -3,19 +3,14 @@ servers:
   - selector: "*" # the * must be wrapped with ""
     envs:
     - name: "gcp" # the first environment is the default one
+#      proxy: your-rpc-invoker-instance-address # this is optional feature for private-only gRPC services
       urls:
       - grpcwebs://library-app-grpcweb-uqnits2f5q-uc.a.run.app
       - grpcs://library-app-grpc-uqnits2f5q-uc.a.run.app:443
-      - rests://library-app-grpc-uqnits2f5q-uc.a.run.app
+#      - rests://library-app-grpc-uqnits2f5q-uc.a.run.app # rest API is not exposed in this environment
     - name: "aws" # aws lambda doesn't support the grpc out of the box
       urls:
       - grpcwebs://t30z1m0w81.execute-api.us-east-1.amazonaws.com
-documentation:
-  content:
-    introduction:
-      file: docs/introduction.md
-    authentication:
-      text: This API does not require any authentication, but we have added a redundant auth method - Token Auth for demo purposes. You can select it and use it, but the results would be the same as without it.
 
 securitySchemes:
   - name: public
