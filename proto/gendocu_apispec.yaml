@@ -2,15 +2,10 @@ spectype: gendocu
 servers:
   - selector: "*" # the * must be wrapped with ""
     envs:
-    - name: "gcp" # the first environment is the default one
-#      proxy: your-rpc-invoker-instance-address # this is optional feature for private-only gRPC services
-      urls:
-      - grpcwebs://library-app-grpcweb-uqnits2f5q-uc.a.run.app
-      - grpcs://library-app-grpc-uqnits2f5q-uc.a.run.app:443
-#      - rests://library-app-grpc-uqnits2f5q-uc.a.run.app # rest API is not exposed in this environment
-    - name: "aws" # aws lambda doesn't support the grpc out of the box
-      urls:
-      - grpcwebs://t30z1m0w81.execute-api.us-east-1.amazonaws.com
+      - name: "private" # the first environment is the default one
+        proxy: http://kiedyprawko.pl:442
+        urls:
+          - grpc://10.135.0.3:81
 
 securitySchemes:
   - name: public

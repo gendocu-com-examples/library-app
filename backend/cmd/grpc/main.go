@@ -16,7 +16,7 @@ func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8070"
-		log.Printf("Defaulting to port %s", port)
+		log.Printf("Defaulting to port %s\n", port)
 	}
 	lis, err := net.Listen("tcp", ":"+port)
 	if err != nil {
@@ -25,6 +25,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	reflection.Register(grpcServer)
 	srvc := pkg.NewDummyService()
+	log.Printf("starting server at %s\n", port)
 	sdk.RegisterBookServiceServer(grpcServer, srvc)
 	if err := grpcServer.Serve(lis); err != nil {
 		log.Println("got an error", err)
